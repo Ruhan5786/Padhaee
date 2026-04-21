@@ -1,0 +1,475 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+    /* background: linear-gradient(145deg, #f8f9ff 0%, #f0f3fd 100%); */
+    background-color:#16263F;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;/
+    
+}
+
+/* Modern Header with Glassmorphism */
+header {
+    background:#FFC107;
+    backdrop-filter: blur(8px);
+    padding: 0.7rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    color: #FFFFFF;
+}
+
+.brand-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.brand-img{
+    width: 50px;
+}
+
+.brand {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #FFFFFF, #E0E7FF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    color:#1E2F4D;
+}
+
+nav ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+nav ul li a {
+    color:#1E2F4D;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 0.8rem;
+    border-radius: 40px;
+    transition: all 0.25s ease;
+    font-size: 1rem;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: blue;
+    transform: translateY(-2px);
+}
+
+/* Main content */
+main {
+    flex: 1;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    width: 100%;
+}
+
+/* Greeting Section */
+.greet {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.greet-text {
+    font-size: 2.8rem;
+    background: linear-gradient(135deg, #3852B4, #5E7AC4);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color:#FFFFFF;
+    margin-bottom: 0.75rem;
+    font-weight: 800;
+}
+
+.desc {
+    font-size: 1.2rem;
+    color:#FFFFFF;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+
+/* Featured Section */
+        .featured {
+            margin: 2rem 0 2rem;
+            padding: 1rem 0;
+        }
+
+        .featured-head {
+            text-align: center;
+            font-size: 2rem;
+            color:#FFFFFF;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .featured-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .featured-card {
+            background: white;
+            padding: 2rem 1.5rem;
+            width: 280px;
+            text-align: center;
+            border-radius: 24px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(56, 82, 180, 0.1);
+        }
+
+        .featured-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(56, 82, 180, 0.15);
+        }
+
+        .featured-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .featured-card h3 {
+            font-size: 1.3rem;
+            color: #1e2a5e;
+            margin-bottom: 0.8rem;
+        }
+
+        .featured-card p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1.2rem;
+            line-height: 1.4;
+        }
+
+        .featured-link {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: #3852B4;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .featured-link:hover {
+            background: #2a3f94;
+            transform: scale(1.02);
+        }
+
+
+/* Stats Cards */
+.head {
+    text-align: center;
+    margin: 1rem 0 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color:#FFFFFF;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.head::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #3852B4;
+    margin: 0.5rem auto 0;
+    border-radius: 4px;
+}
+
+.stat {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 2rem 0 3rem;
+}
+
+.stat a {
+    text-decoration: none;
+    transition: transform 0.25s ease;
+    display: block;
+}
+
+.stat a:hover {
+    transform: translateY(-8px);
+}
+
+.info {
+    background: white;
+    padding: 1.8rem 1.2rem;
+    width: 180px;
+    text-align: center;
+    border-radius: 28px;
+    font-weight: 800;
+    font-size: 2rem;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.25s ease;
+    border-left: 10px solid;
+    backdrop-filter: blur(4px);
+    color: inherit;
+}
+
+.info br {
+    font-size: 0.9rem;
+}
+
+.info:hover {
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12);
+    background: #ffffffdd;
+}
+
+/* Feedback Section Modern */
+.fb {
+    background: linear-gradient(120deg, #ffffff, #f5f7ff);
+    border-radius: 48px;
+    padding: 2rem 2rem;
+    margin: 1rem 0 1rem;
+    box-shadow: 0 12px 28px rgba(56, 82, 180, 0.12);
+    border: 1px solid rgba(56, 82, 180, 0.2);
+}
+
+.fb-head {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #1e2a5e;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.feedback {
+    display: flex;
+    justify-content: center;
+}
+
+.feedback form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 650px;
+}
+
+.fb-text {
+    flex: 3;
+    min-width: 220px;
+    padding: 1rem 1.5rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 60px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.25s;
+    background: white;
+    font-family: inherit;
+}
+
+.fb-text:focus {
+    border-color: #3852B4;
+    box-shadow: 0 0 0 3px rgba(56, 82, 180, 0.2);
+}
+
+.fb-submit {
+    background: #3852B4;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 60px;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.fb-submit:hover {
+    background: #2a3f94;
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(56, 82, 180, 0.3);
+}
+
+/* Decorative elements */
+.stat .info {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(2px);
+}
+
+/* Footer */
+footer {
+    background: #FFC107;
+    text-align: center;
+    padding: 0.5rem;
+    color:#1E2F4D;
+    font-weight: 500;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.social a{
+    color: #1E2F4D;
+    font-size: 1.5rem;
+}
+
+hr{
+    margin-top: 0.5rem;
+    border: 1px solid white;
+    margin-bottom: 0.5rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive fine-tuning */
+@media (max-width: 768px) {
+    header {
+        padding: 0.8rem 1.2rem;
+    }
+
+    .brand {
+        font-size: 1.4rem;
+    }
+
+    nav ul {
+        gap: 1rem;
+    }
+
+    .greet-text {
+        font-size: 2rem;
+    }
+
+    .desc {
+        font-size: 1rem;
+    }
+
+    .head {
+        font-size: 1.6rem;
+    }
+
+    .info {
+        width: 150px;
+        padding: 1.2rem 0.8rem;
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .greet-text {
+        font-size: 1.5rem;
+    }
+
+    .head {
+        font-size: 1.4rem;
+    }
+
+    .featured-head{
+        font-size: 1.5rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    .stat {
+        gap: 1rem;
+    }
+
+    .info {
+        width: 135px;
+        font-size: 1.4rem;
+        padding: 1rem 0.5rem;
+    }
+
+    .fb{
+        padding: 1.5rem 1.5rem;
+    }
+
+    .fb-head {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .fb-text {
+        padding: 0.7rem 1rem;
+    }
+
+    .fb-submit {
+        padding: 0.7rem 1.5rem;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+}
+
+/* Additional subtle card hover effect */
+.info {
+    position: relative;
+    overflow: hidden;
+}
+
+.info::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.4), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.info:hover::after {
+    opacity: 1;
+}

@@ -1,0 +1,461 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+    /* background: linear-gradient(145deg, #f8f9ff 0%, #f0f3fd 100%); */
+    background-color:#16263F;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Modern Header with Glassmorphism */
+header {
+    /* background: rgba(56, 82, 180, 0.95); */
+    background:#FFC107;
+    backdrop-filter: blur(8px);
+    padding: 0.7rem 2rem;
+    /* color: white; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    color: #FFFFFF;
+}
+
+.brand-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    /* background-color: #FFFFFF; */
+}
+
+.brand-img{
+    width: 50px;
+}
+
+.brand {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #FFFFFF, #E0E7FF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    color: #1E2F4D;
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+nav ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+nav ul li a {
+    color:#1E2F4D;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 0.8rem;
+    border-radius: 40px;
+    transition: all 0.25s ease;
+    font-size: 1rem;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: blue;
+    transform: translateY(-2px);
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    width: 100%;
+}
+
+.head {
+    text-align: center;
+    margin: 0.5rem 0 1rem;
+    font-size: 2.4rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #1e2a5e, #3852B4);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: #FFFFFF;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.head::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #3852B4;
+    margin: 0.5rem auto 0;
+    border-radius: 4px;
+}
+
+/* Notes Grid */
+.section-1 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 1.5rem 0 2.5rem;
+}
+
+.notes {
+    width: 260px;
+    height: 300px;
+    background: white;
+    border-radius: 28px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: #1e2a5e;
+    transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    border-left: 10px solid;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(2px);
+    line-height: 1.3;
+}
+
+.notes br {
+    display: block;
+    content: "";
+    margin: 4px 0;
+}
+
+.notes:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* Ripple effect */
+.ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: scale(0);
+    animation: rippleAnim 0.5s linear;
+    pointer-events: none;
+}
+
+@keyframes rippleAnim {
+    to {
+        transform: scale(8);
+        opacity: 0;
+    }
+}
+
+/* Modal / Popup Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 28px;
+    overflow: hidden;
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    background: #FFC107;
+    padding: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    color: #1E2F4D;
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #1E2F4D;
+    transition: all 0.2s;
+}
+
+.close-modal:hover {
+    transform: scale(1.1);
+}
+
+.chapter-list {
+    padding: 1rem;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.chapter-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid #eee;
+    transition: all 0.2s ease;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.chapter-name {
+    font-size: 1rem;
+    color: #1e2a5e;
+    font-weight: 500;
+    flex: 1;
+    min-width: 0;
+    word-break: break-word;
+    text-transform: uppercase;
+}
+
+.download-chapter {
+    background: #3852B4;
+    color: white;
+    border: none;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
+    min-width: 85px;
+    text-align: center;
+}
+
+.download-chapter:hover {
+    background: #2a3f94;
+    transform: scale(1.02);
+}
+
+/* Why Notes Section */
+.why-notes {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(120deg, #e9efff, #ffffff);
+    border-radius: 48px;
+    margin: 1rem 0 1rem;
+    box-shadow: 0 8px 20px rgba(56, 82, 180, 0.1);
+    border: 1px solid rgba(56, 82, 180, 0.15);
+}
+
+.why-notes h2 {
+    font-size: 1.9rem;
+    color: #1e2a5e;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.why-notes ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.why-notes li {
+    font-size: 1.1rem;
+    background: #3852B4;
+    color: white;
+    padding: 0.6rem 1.4rem;
+    border-radius: 60px;
+    font-weight: 500;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+.why-notes li:hover {
+    transform: translateY(-3px);
+    background: #2a3f94;
+    box-shadow: 0 6px 12px rgba(56, 82, 180, 0.3);
+}
+/* Footer */
+footer {
+    background: #FFC107;
+    text-align: center;
+    padding: 0.5rem;
+    color:#1E2F4D;
+    font-weight: 500;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.social a{
+    color: #1E2F4D;
+    font-size: 1.5rem;
+}
+
+hr{
+    margin-top: 0.5rem;
+    border: 1px solid white;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 0.8rem 1.2rem;
+    }
+
+    .brand {
+        font-size: 1.4rem;
+    }
+
+    nav ul {
+        gap: 1rem;
+    }
+
+    .head {
+        font-size: 1.9rem;
+    }
+
+    .notes {
+        width: 220px;
+        height: 260px;
+        font-size: 1.4rem;
+    }
+
+    .why-notes ul {
+        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .why-notes li {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header .brand, nav{
+        margin-bottom: -8px;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    .section-1 {
+        gap: 1.2rem;
+    }
+
+    .modal-header h2 {
+        font-size: 1rem;
+    }
+
+    .chapter-name{
+        font-size: 0.75rem;
+    }
+
+    .download-chapter{
+        padding: 0.3rem 0.8rem;
+        font-size: 0.75rem;
+    }
+
+    .notes {
+        width: 160px;
+        height: 200px;
+        font-size: 1.2rem;
+    }
+
+    .why-notes {
+        padding: 1.5rem;
+    }
+
+    .why-notes h2 {
+        font-size: 1.25rem;
+    }
+
+    .why-notes li {
+        font-size: 0.95rem;
+        padding: 0.5rem 1rem;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+}
+
+/* Download badge micro interaction */
+.notes::before {
+    content: "⬇️";
+    font-size: 1.2rem;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.notes:hover::before {
+    opacity: 0.7;
+}
