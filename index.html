@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padhaee</title>
+    <link rel="shortcut icon" href="padhaee.png" type="image/png">
+    <link rel="stylesheet" href="./Style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <div class="brand-box">
+            <img src="logo.png" alt="Padhaee Logo" class="brand-img">
+            <h1 class="brand">Padhaee</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="notes.html">Notes</a></li>
+                <li><a href="pyqs.html">PYQs</a></li>
+                <li><a href="textbooks.html">Textbooks</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="greet">
+            <h2 class="greet-text">✨ Welcome to Padhaee!</h2>
+            <p class="desc">
+                All your study materials in one place — simple, clear, and exam-ready.
+            </p>
+        </div>
+
+        <!-- Featured Section - MOVED ABOVE STATS -->
+        <section class="featured">
+            <h2 class="featured-head">📖 Most Accessed Resources</h2>
+            <div class="featured-grid">
+                <div class="featured-card">
+                    <div class="featured-icon">📘</div>
+                    <h3>Popular Notes</h3>
+                    <p>Linux Administration, PHP, Android Programming & more</p>
+                    <a href="notes.html" class="featured-link">Explore Notes →</a>
+                </div>
+                <div class="featured-card">
+                    <div class="featured-icon">📚</div>
+                    <h3>Textbooks</h3>
+                    <p>Semester-wise organized books for all subjects</p>
+                    <a href="textbooks.html" class="featured-link">Explore Textbooks →</a>
+                </div>
+                <div class="featured-card">
+                    <div class="featured-icon">📝</div>
+                    <h3>PYQs</h3>
+                    <p>Previous year questions to boost your exam preparation</p>
+                    <a href="pyqs.html" class="featured-link">Explore PYQs →</a>
+                </div>
+            </div>
+        </section>
+
+        <h1 class="head">🌟 Why Students Love Padhaee?</h1>
+        <section class="stat">
+            <a href="notes.html" style="color: #474A8A;">
+                <div class="info" style="border-left-color: #474A8A;">
+                    63+
+                    <br>
+                    <span style="font-size: 0.9rem; font-weight: 500;">Notes</span>
+                </div>
+            </a>
+
+            <a href="pyqs.html" style="color: #F58529;">
+                <div class="info" style="border-left-color: #F58529;">
+                    42+
+                    <br>
+                    <span style="font-size: 0.9rem; font-weight: 500;">PYQs</span>
+                </div>
+            </a>
+
+            <a href="textbooks.html" style="color: #669933;">
+                <div class="info" style="border-left-color: #669933;">
+                    23+
+                    <br>
+                    <span style="font-size: 0.9rem; font-weight: 500;">Textbooks</span>
+                </div>
+            </a>
+
+            <a href="textbooks.html" style="color: #9C3433;">
+                <div class="info" style="border-left-color: #9C3433;">
+                    19+
+                    <br>
+                    <span style="font-size: 0.9rem; font-weight: 500;">Subjects</span>
+                </div>
+            </a>
+        </section>
+
+        <section class="fb">
+            <h2 class="fb-head">💬 Help us to improve your experience!</h2>
+            <div class="feedback">
+                <form action="https://formspree.io/f/xlgooggk" method="post">
+                    <input type="text" name="Feedback" placeholder="Give your valuable feedback..." class="fb-text"
+                        required>
+                    <button type="submit" class="fb-submit">Send Feedback</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="social">
+            <a href="https://www.instagram.com/padhaee_official?utm_source=qr&igsh=MThmNXV6a2h2OWlkaw%3D%3D"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/share/1KPkxu3TEu/"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://youtube.com/@padhaee-official?si=JyBRbjzczS9wm9VI"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://x.com/PadhaeeOfficial?t=QFh5TYU51Q5cAG8EHhT3Gw&s=08"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/padh-aee-25520a390?utm_source=share_via&utm_content=profile&utm_medium=member_android"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <hr>
+        <div class="copy">Copyright &copy; 2026 Padhaee | All Rights Reserved</div>
+    </footer>
+
+    <script>
+        // simple console greeting for fun
+        console.log("%c📘 Padhaee | Your study companion is ready!", "color: #3852B4; font-size: 16px; font-weight: bold;");
+        // Add a tiny hover effect on stats to make them even more interactive
+        const statCards = document.querySelectorAll('.info');
+        statCards.forEach(card => {
+            card.addEventListener('click', function (e) {
+                // just subtle ripple (no redirect interruption)
+                let ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 400);
+            });
+        });
+    </script>
+</body>
+
+</html>
