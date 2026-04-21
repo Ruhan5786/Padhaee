@@ -12,7 +12,7 @@ Padhaee is a simple educational website designed to help students access study-r
 - JavaScript
 
 ## 📌 Live Demo
-https://apnakareem.github.io/Padhaee/
+https://ruhan5786.github.io/Padhaee/
 
 ## 📂 How to Use
 1. Open the live demo link
